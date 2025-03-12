@@ -28,14 +28,18 @@ def plot_data(A, B):
     fig = plt.figure(figsize=(10, 10))
     ax = fig.add_subplot(111)
     ax.axis('equal')
+    
     if A is not None:
         xA, yA = A
-        ax.plot(xA, yA, color='#336699',  marker='o' ,label="Moved Data" )
+        ax.scatter(xA, yA, color='#336699', marker='o', label="Moved Data", alpha=0.6, edgecolors='black')
+
     if B is not None:
         xB, yB = B
-        ax.plot(xB, yB, color='green', marker='o',label="Original Data")
+        ax.scatter(xB, yB, color='red', marker='x', label="Original Data", alpha=0.6, edgecolors='black')
+
     ax.legend()
     return ax
+
 
 
 
